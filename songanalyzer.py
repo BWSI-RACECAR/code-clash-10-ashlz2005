@@ -31,6 +31,9 @@ Input: “good food for nice mice”;                           Output: ”f=2, 
 Input: “howdy rowdy hikers hope you have a great time”;     Output: "h=4, 2 rhyming words”
 """
 
+from collections import Counter
+
+
 class Solution:
     def song_analyze(self,lyric):
         # type lyric: string
@@ -44,26 +47,26 @@ class Solution:
         intcount = 0
         
         for i in wordlist:
-            if count.has_key(i[0]):
+            if i[0] in count:
                 count[i[0]] += 1
             else:
                 count[i[0]] = 1
         
         for i in wordlist:
-            if rhyme.has_key(i[len(i) - 3:]):
+            if i[len(i) - 3:] in rhyme and len(i) > 3:
                 count[i[len(i) - 3:]] += 1
-            else:
+            elif len(i) > 3:
                 rhyme[i[len(i) - 3:]] = 1
         
         for i in count:
             if count[i] > 1:
-                final += i + '=' + count[i] + ', '
+                final += i + '=' + str(count[i]) + ', '
         
         for i in rhyme:
             if rhyme[i] > 1:
                 intcount += rhyme[i]
         
-        final += intcount + ' rhyming words'
+        final += str(intcount) + ' rhyming words'
         return final
 
 
