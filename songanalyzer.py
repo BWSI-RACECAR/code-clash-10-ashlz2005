@@ -39,7 +39,7 @@ class Solution:
         # TODO: Write code below to return a string with the solution to the prompt
         count = {}
         rhyme = {}
-        wordlist = lyric.split('')
+        wordlist = lyric.split(' ')
         final = ''
         intcount = 0
         
