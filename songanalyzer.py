@@ -54,7 +54,7 @@ class Solution:
         
         for i in wordlist:
             if i[len(i) - 3:] in rhyme and len(i) > 3:
-                count[i[len(i) - 3:]] += 1
+                rhyme[i[len(i) - 3:]] += 1
             elif len(i) > 3:
                 rhyme[i[len(i) - 3:]] = 1
         
