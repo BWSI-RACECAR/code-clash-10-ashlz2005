@@ -61,7 +61,7 @@ class Solution:
         
         for i in rhyme:
             if rhyme[i] > 1:
-                intcount += 1
+                intcount += rhyme[i]
         
         final += intcount + ' rhyming words'
         return final
